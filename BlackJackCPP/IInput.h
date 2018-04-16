@@ -8,4 +8,3 @@ class IInput
 		virtual std::string	in(void) = 0;
 		virtual std::string in(std::string prompt) = 0;
 };
-

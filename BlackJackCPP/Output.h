@@ -8,7 +8,7 @@ class Output : public IOutput
 	public:
 		Output();
 		~Output();
-		void out(std::string print);
-		void out(int num);
+		void put(std::string print);
+		void put(int num);
 };
 
