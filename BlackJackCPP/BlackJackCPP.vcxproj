@@ -147,11 +147,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="IInput.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="IOutput.h" />
+    <ClInclude Include="Output.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BlackJackCPP.cpp" />
+    <ClCompile Include="IInput.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="IOutput.cpp" />
+    <ClCompile Include="Output.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
