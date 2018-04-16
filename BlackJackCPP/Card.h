@@ -11,10 +11,13 @@ class Card : public ICard
 		void	PrintCard(IOutput *out);
 		void	FlipCard();
 
-	private:
-		int			value;
-		std::string	*suit;
-		bool		faceDown;
+	//private:
+		int				value;
+		std::string		*name;
+		std::string		*suit;
+		bool			faceDown;
+
+		std::string*	card_int_to_string(int value);
 };
 
 enum Id

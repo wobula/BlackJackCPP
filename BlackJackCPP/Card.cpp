@@ -12,6 +12,7 @@ Card::Card()
 Card::Card(int value, std::string suit, bool faceDown)
 {
 	this->value = value;
+	this->name = card_int_to_string(value);
 	this->suit = new std::string(suit);
 	this->faceDown = faceDown;
 }
@@ -31,4 +32,12 @@ void	Card::FlipCard(void)
 		this->faceDown = false;
 	else
 		this->faceDown = true;
+}
+
+std::string* Card::card_int_to_string(int value)
+{
+	const std::string enumtext[] = { "Zero", "One", "Two", "Three","Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten" };
+	if (value > 10 || value < 2)
+		return (NULL);
+	return (new std::string(enumtext[value]));
 }
