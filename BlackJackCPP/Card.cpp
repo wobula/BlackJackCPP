@@ -17,6 +17,14 @@ Card::Card(int value, std::string suit, bool faceDown)
 	this->faceDown = faceDown;
 }
 
+Card::Card(int value, std::string face, std::string suit, bool faceDown)
+{
+	this->value = value;
+	this->name = new std::string(face);
+	this->suit = new std::string(suit);
+	this->faceDown = faceDown;
+}
+
 Card::~Card()
 {
 }

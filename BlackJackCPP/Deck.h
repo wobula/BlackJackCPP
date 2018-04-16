@@ -11,7 +11,8 @@ class Deck : public IDeck
 		std::vector<Card*> *MyDeck;
 		std::string			card_int_to_string(int value);
 	private:
-		std::vector<Card*>*	MakeDeck(void);
+		void				makeNumberCards(std::vector<Card*>* tmpDeck);
+		void				makeFaceCards(std::vector<Card*>* tmpDeck);
 		void				delete_cards(std::vector<Card*> *deck);
 };
 

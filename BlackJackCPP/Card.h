@@ -7,6 +7,7 @@ class Card : public ICard
 	public:
 				Card();
 				Card(int value, std::string suit, bool faceDown);
+				Card(int value, std::string face, std::string suit, bool faceDown);
 				~Card();
 		void	PrintCard(IOutput *out);
 		void	FlipCard();
