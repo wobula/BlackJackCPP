@@ -9,6 +9,7 @@ class Output : public IOutput
 		Output();
 		~Output();
 		void put(std::string print);
+		void put(std::string *print);
 		void put(int num);
 };
 

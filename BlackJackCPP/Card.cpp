@@ -4,12 +4,15 @@
 
 Card::Card()
 {
+	this->value = -1;
+	this->suit = NULL;
+	this->faceDown = faceDown;
 }
 
-Card::Card(Id value, Type suit, bool faceDown)
+Card::Card(int value, std::string suit, bool faceDown)
 {
 	this->value = value;
-	this->suit = suit;
+	this->suit = new std::string(suit);
 	this->faceDown = faceDown;
 }
 
@@ -17,23 +20,10 @@ Card::~Card()
 {
 }
 
-std::string	Card::getSuit(void)
-{
-	if (this->suit == Heart)
-		return ("Heart");
-	else if (this->suit == Spade)
-		return ("Spade");
-	else if (this->suit == Club)
-		return ("Club");
-	else if (this->suit == Diamond)
-		return ("Diamond");
-	return (NULL);
-}
-
 void	Card::PrintCard(IOutput *out)
 {
 	out->put(this->value);
-	out->put(this->getSuit());
+	out->put(this->suit);
 }
 void	Card::FlipCard(void)
 {

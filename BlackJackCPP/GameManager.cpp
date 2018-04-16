@@ -5,7 +5,6 @@
 GameManager::GameManager()
 {
 	this->Out = new Output();
-	this->Out->put("Hi mom");
 }
 
 GameManager::~GameManager()

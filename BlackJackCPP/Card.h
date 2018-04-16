@@ -6,17 +6,15 @@ class Card : public ICard
 {
 	public:
 				Card();
-				Card(enum Id value, enum Type suit, bool faceDown);
+				Card(int value, std::string suit, bool faceDown);
 				~Card();
 		void	PrintCard(IOutput *out);
 		void	FlipCard();
 
 	private:
-		std::string	getSuit(void);
-
-		Id		value;
-		Type	suit;
-		bool	faceDown;
+		int			value;
+		std::string	*suit;
+		bool		faceDown;
 };
 
 enum Id
@@ -34,6 +32,7 @@ enum Id
 	Four = 4,
 	Three = 3,
 	Two = 2,
+	Last = 11
 };
 
 enum Type

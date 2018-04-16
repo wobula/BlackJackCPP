@@ -7,6 +7,4 @@ class ICard
 		virtual			~ICard() = 0;
 		virtual void	PrintCard(IOutput *out) = 0;
 		virtual void	FlipCard() = 0;
-	private:
-		virtual std::string	getSuit() = 0;
 };

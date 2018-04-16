@@ -148,8 +148,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Card.h" />
+    <ClInclude Include="Deck.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="ICard.h" />
+    <ClInclude Include="IDeck.h" />
     <ClInclude Include="IGameManager.h" />
     <ClInclude Include="IInput.h" />
     <ClInclude Include="Input.h" />
@@ -161,8 +163,10 @@
   <ItemGroup>
     <ClCompile Include="BlackJackCPP.cpp" />
     <ClCompile Include="Card.cpp" />
+    <ClCompile Include="Deck.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="ICard.cpp" />
+    <ClCompile Include="IDeck.cpp" />
     <ClCompile Include="IGameManager.cpp" />
     <ClCompile Include="IInput.cpp" />
     <ClCompile Include="Input.cpp" />
