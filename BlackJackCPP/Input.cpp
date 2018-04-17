@@ -11,7 +11,7 @@ Input::~Input()
 {
 }
 
-std::string Input::put(void)
+std::string Input::String(void)
 {
 	std::string tmp;
 
@@ -19,11 +19,28 @@ std::string Input::put(void)
 	return (tmp);
 }
 
-std::string Input::put(std::string prompt)
+std::string Input::String(IOutput *out, std::string prompt)
 {
 	std::string tmp;
 
-	std::cout << prompt;
+	out->put(prompt);
 	std::getline(std::cin, tmp);
 	return (tmp);
+}
+
+int			Input::Int(void)
+{
+	int value;
+
+	std::cin >> value;
+	return (value);
+}
+
+int			Input::Int(IOutput *out, std::string prompt)
+{
+	int value;
+
+	out->put(prompt);
+	std::cin >> value;
+	return (value);
 }

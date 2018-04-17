@@ -20,9 +20,8 @@ void	GameManager::init(IInput *in, IOutput *out)
 	std::string tmp;
 	while (42)
 	{
-		tmp = in->put("Please enter the number of players: ");
+		tmp = in->String(this->Out, "Please enter the number of players: ");
 	}
-	
 }
 
 void	GameManager::Play(std::vector<IPlayer*> *players)
@@ -34,10 +33,3 @@ void	GameManager::end(IPlayer *winner)
 {
 
 }
-
-/*
-void	Play(void);
-private:
-void	Init(void);
-void	End(IPlayer *winner);
-*/
