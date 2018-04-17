@@ -1,4 +1,8 @@
 #pragma once
+
+#ifndef CARD_H
+#define CARD_H
+
 #include "ICard.h"
 #include "IOutput.h"
 
@@ -18,7 +22,7 @@ class Card : public ICard
 		std::string		*suit;
 		bool			faceDown;
 
-		std::string*	card_int_to_string(int value);
+		std::string		*card_int_to_string(int value);
 };
 
 enum Id
@@ -46,3 +50,5 @@ enum Type
 	Diamond,
 	Spade
 };
+
+#endif

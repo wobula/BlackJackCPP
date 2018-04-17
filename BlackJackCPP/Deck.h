@@ -1,5 +1,10 @@
 #pragma once
+
+#ifndef DECK_H
+#define DECK_H
+
 #include "IDeck.h"
+#include "Card.h"
 #include <iostream>
 
 class Deck : public IDeck
@@ -8,11 +13,13 @@ class Deck : public IDeck
 		Deck();
 		~Deck();
 
-		std::vector<Card*> *MyDeck;
-		std::string			card_int_to_string(int value);
+		std::vector<ICard*> *MyDeck;
+		std::string			*card_int_to_string(int value);
 	private:
-		void				makeNumberCards(std::vector<Card*>* tmpDeck);
-		void				makeFaceCards(std::vector<Card*>* tmpDeck);
-		void				delete_cards(std::vector<Card*> *deck);
+		void				FillDeck(std::vector<ICard*> *tmpDeck);
+		void				makeNumberCards(std::vector<ICard*> *tmpDeck);
+		void				makeFaceCards(std::vector<ICard*> *tmpDeck);
+		void				delete_cards(std::vector<ICard*> *deck);
 };
 
+#endif

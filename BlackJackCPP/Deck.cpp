@@ -5,13 +5,13 @@
 
 Deck::Deck()
 {
+	std::vector<Deck*> *test;
 	std::cout << "Making your deck of cards!" << std::endl;
-	this->MyDeck = new std::vector<Card*>();
-	makeNumberCards(this->MyDeck);
-	makeFaceCards(this->MyDeck);
+	this->MyDeck = new std::vector<ICard*>();
+	FillDeck(this->MyDeck);
 }
 
-void Deck::makeNumberCards(std::vector<Card*>* tmpDeck)
+void Deck::makeNumberCards(std::vector<ICard*>* tmpDeck)
 {
 	const std::string enumtext[] = { "Heart", "Club", "Spade", "Diamond" };
 	Card *ptr;
@@ -22,14 +22,14 @@ void Deck::makeNumberCards(std::vector<Card*>* tmpDeck)
 		for (int suit = 3; suit > -1; suit--)
 		{
 			tmpDeck->push_back(new Card(cardValue, enumtext[suit], false));
-			ptr = tmpDeck->at(cardCount);
+			ptr = dynamic_cast<Card*>(tmpDeck->at(cardCount));
 			std::cout << "Card suit: " + *ptr->suit + " | Card name: " << *ptr->name << " | Card value: " << ptr->value << std::endl;
 			cardCount++;
 		}
 	}
 }
 
-void Deck::makeFaceCards(std::vector<Card*>* tmpDeck)
+void Deck::makeFaceCards(std::vector<ICard*>* tmpDeck)
 {
 	std::cout << "--> Making face cards" << std::endl;
 	const std::string enumtext[] = { "Heart", "Club", "Spade", "Diamond" };
@@ -49,13 +49,19 @@ void Deck::makeFaceCards(std::vector<Card*>* tmpDeck)
 	}
 }
 
+void Deck::FillDeck(std::vector<ICard*>* tmpDeck)
+{
+	makeNumberCards(tmpDeck);
+	makeFaceCards(tmpDeck);
+}
+
 Deck::~Deck()
 {
 	delete_cards(this->MyDeck);
 	delete MyDeck;
 }
 
-void	Deck::delete_cards(std::vector<Card*> *deck)
+void	Deck::delete_cards(std::vector<ICard*> *deck)
 {
 	if (!deck)
 		return;
@@ -64,8 +70,10 @@ void	Deck::delete_cards(std::vector<Card*> *deck)
 	Card *ptr;
 	for (int x = 0; x < deck->size(); x++)
 	{
-		ptr = deck->at(x);
+		ptr = dynamic_cast<Card*>(deck->at(x));
 		std::cout << "Card suit: " + *ptr->suit + " | Card name: " << *ptr->name << " | Card value: " << ptr->value << std::endl;
-		delete ptr;
+		delete (ptr->name);
+		delete (ptr->suit);
+		delete (ptr);
 	}
 }

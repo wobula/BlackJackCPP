@@ -1,4 +1,8 @@
 #pragma once
+
+#ifndef  IOUTPUT_H
+#define  IOUTPUT_H
+
 #include <string>
 
 class IOutput
@@ -10,3 +14,4 @@ class IOutput
 		virtual void put(int num) = 0;
 };
 
+#endif

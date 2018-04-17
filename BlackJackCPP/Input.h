@@ -1,4 +1,8 @@
 #pragma once
+
+#ifndef  INPUT_H
+#define  INPUT_H
+
 #include "IInput.h"
 #include <string>
 #include <iostream>
@@ -12,3 +16,4 @@ class Input : public IInput
 		std::string in(std::string prompt);
 };
 
+#endif

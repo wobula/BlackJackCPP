@@ -1,4 +1,8 @@
 #pragma once
+
+#ifndef OUTPUT_H
+#define OUTPUT_H
+
 #include "IOutput.h"
 #include <string>
 #include <iostream>
@@ -13,3 +17,4 @@ class Output : public IOutput
 		void put(int num);
 };
 
+#endif

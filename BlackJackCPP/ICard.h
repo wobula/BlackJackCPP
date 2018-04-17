@@ -1,4 +1,8 @@
 #pragma once
+
+#ifndef ICARD_H
+#define	ICARD_H
+
 #include "IOutput.h"
 
 class ICard
@@ -8,3 +12,5 @@ class ICard
 		virtual void	PrintCard(IOutput *out) = 0;
 		virtual void	FlipCard() = 0;
 };
+
+#endif
