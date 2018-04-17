@@ -153,9 +153,13 @@
     <ClInclude Include="ICard.h" />
     <ClInclude Include="IDeck.h" />
     <ClInclude Include="IGameManager.h" />
+    <ClInclude Include="IHand.h" />
     <ClInclude Include="IInput.h" />
+    <ClInclude Include="IMove.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="IOutput.h" />
+    <ClInclude Include="IPlayer.h" />
+    <ClInclude Include="Move.h" />
     <ClInclude Include="Output.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -168,9 +172,13 @@
     <ClCompile Include="ICard.cpp" />
     <ClCompile Include="IDeck.cpp" />
     <ClCompile Include="IGameManager.cpp" />
+    <ClCompile Include="IHand.cpp" />
     <ClCompile Include="IInput.cpp" />
+    <ClCompile Include="IMove.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="IOutput.cpp" />
+    <ClCompile Include="IPlayer.cpp" />
+    <ClCompile Include="Move.cpp" />
     <ClCompile Include="Output.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

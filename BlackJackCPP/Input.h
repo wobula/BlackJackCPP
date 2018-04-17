@@ -12,8 +12,8 @@ class Input : public IInput
 	public:
 		Input();
 		~Input();
-		std::string in(void);
-		std::string in(std::string prompt);
+		std::string put(void);
+		std::string put(std::string prompt);
 };
 
 #endif

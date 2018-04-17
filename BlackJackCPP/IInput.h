@@ -9,8 +9,8 @@ class IInput
 {
 	public:
 		virtual				~IInput() = 0;
-		virtual std::string	in(void) = 0;
-		virtual std::string in(std::string prompt) = 0;
+		virtual std::string	put(void) = 0;
+		virtual std::string put(std::string prompt) = 0;
 };
 
 #endif

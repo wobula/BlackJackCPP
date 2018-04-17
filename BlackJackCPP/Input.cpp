@@ -11,7 +11,7 @@ Input::~Input()
 {
 }
 
-std::string Input::in(void)
+std::string Input::put(void)
 {
 	std::string tmp;
 
@@ -19,7 +19,7 @@ std::string Input::in(void)
 	return (tmp);
 }
 
-std::string Input::in(std::string prompt)
+std::string Input::put(std::string prompt)
 {
 	std::string tmp;
 
