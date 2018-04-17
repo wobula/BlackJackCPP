@@ -1,13 +1,15 @@
 #include "stdafx.h"
 #include "Player.h"
 
-Player::Player()
-{
-}
-
 Player::Player(std::string name)
 {
 	this->name = new std::string(name);
+	this->cards = new Deck();
+	this->hand = new Hand();
+}
+
+Player::Player() : Player("player name")
+{
 }
 
 Player::~Player()
