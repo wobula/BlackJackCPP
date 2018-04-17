@@ -15,7 +15,8 @@ class Move : public IMove
 enum playerMove
 {
 	Hit,
-	Stand
+	Stand,
+	Last
 };
 
 #endif

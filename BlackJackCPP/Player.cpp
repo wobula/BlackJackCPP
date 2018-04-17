@@ -36,7 +36,9 @@ IMove*	Player::GetMove(IInput *in, IOutput *out)
 	move = new Move();
 	if (action[0] == "s")
 		move->action = Stand;
-	else
+	else if (action[0] == "h")
 		move->action = Hit;
+	else
+		move->action = Last;
 	return (move);
 }
