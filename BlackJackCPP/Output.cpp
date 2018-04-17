@@ -16,7 +16,7 @@ void Output::put(std::string print)
 
 void Output::put(std::string *print)
 {
-	std::cout << print << std::endl;
+	std::cout << *print << std::endl;
 }
 
 void Output::put(int num)

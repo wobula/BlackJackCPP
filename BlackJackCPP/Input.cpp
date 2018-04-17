@@ -38,9 +38,16 @@ int			Input::Int(void)
 
 int			Input::Int(IOutput *out, std::string prompt)
 {
-	int value;
+	std::string tmp;
+	int			value;
 
-	out->put(prompt);
-	std::cin >> value;
+	while (42)
+	{
+		out->put(prompt);
+		std::getline(std::cin, tmp);
+		if (tmp.length() != 0 && tmp[0] > '0' && tmp[0] < '9')
+			break;
+	}
+	value = tmp[0] - 48;
 	return (value);
 }

@@ -10,25 +10,19 @@
 class GameManager : public IGameManager
 {
 	public:
-		IOutput *Out;
-		IInput	*In;
-		GameManager();
-		~GameManager();
-		void	Play(std::vector<IPlayer*> *players);
+		IOutput					*Out;
+		IInput					*In;
+		std::vector<IPlayer*>	*players;
+
+								GameManager();
+								~GameManager();
+		void					Play();
+
 	private:
-		int		playerCount;
-		void	init(IInput *in, IOutput *out);
-		void	end(IPlayer *winner);
+		int						playerCount;
+		void					getPlayers(IInput *in, IOutput *out, std::vector<IPlayer*> *players, int playerCount);
+		void					init(IInput *in, IOutput *out);
+		void					end(IPlayer *winner);
 };
 
 #endif
-
-
-/*
-public:
-virtual			~IGameManager() = 0;
-virtual void	Play(std::vector<IPlayer*> *players) = 0;
-private:
-virtual void	Init(void) = 0;
-virtual void	End(IPlayer *winner) = 0;
-*/
