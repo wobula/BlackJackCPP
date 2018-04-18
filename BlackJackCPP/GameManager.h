@@ -20,7 +20,9 @@ class GameManager : public IGameManager
 
 	private:
 		int						playerCount;
-		void					getPlayers(IInput *in, IOutput *out, std::vector<IPlayer*> *players, int playerCount);
+		int						getPlayerCount(IInput *in, IOutput *out);
+		std::vector<IPlayer*>*	makePlayers(IInput *in, IOutput *out, std::vector<IPlayer*> *players, int playerCount);
+		void					deletePlayers(std::vector<IPlayer*> *players);
 		void					init(IInput *in, IOutput *out);
 		void					end(IPlayer *winner);
 };

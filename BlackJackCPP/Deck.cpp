@@ -63,13 +63,10 @@ void	Deck::delete_cards(std::vector<ICard*> *deck)
 {
 	if (!deck)
 		return;
-	std::cout << "Deleting your deck of cards!" << std::endl;
-	std::cout << "Number of cards: " << deck->size() << std::endl;
 	Card *ptr;
 	for (int x = 0; x < (int)deck->size(); x++)
 	{
 		ptr = (Card*)deck->at(x);
-		std::cout << "Card suit: " + *ptr->suit + " | Card name: " << *ptr->name << " | Card value: " << ptr->value << std::endl;
 		delete (ptr->name);
 		delete (ptr->suit);
 		delete (ptr);

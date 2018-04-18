@@ -14,9 +14,22 @@ GameManager::~GameManager()
 {
 	delete this->Out;
 	delete this->In;
+	deletePlayers(this->players);
+}
+
+void	GameManager::deletePlayers(std::vector<IPlayer*> *players)
+{
+	players->clear();
+	delete players;
 }
 
 void	GameManager::init(IInput *in, IOutput *out)
+{
+	this->playerCount = getPlayerCount(in, out);
+	this->players = makePlayers(this->In, this->Out, this->players, playerCount);
+}
+
+int		GameManager::getPlayerCount(IInput *in, IOutput *out)
 {
 	int playerCount;
 
@@ -27,11 +40,10 @@ void	GameManager::init(IInput *in, IOutput *out)
 			break;
 	}
 	out->put("Player count is " + std::to_string(playerCount));
-	this->playerCount = playerCount;
-	getPlayers(this->In, this->Out, this->players, playerCount);
+	return (playerCount);
 }
 
-void	GameManager::getPlayers(IInput *in, IOutput *out, std::vector<IPlayer*> *players, int playerCount)
+std::vector<IPlayer*>*	GameManager::makePlayers(IInput *in, IOutput *out, std::vector<IPlayer*> *players, int playerCount)
 {
 	std::string name;
 	players = new std::vector<IPlayer*>();
@@ -46,6 +58,7 @@ void	GameManager::getPlayers(IInput *in, IOutput *out, std::vector<IPlayer*> *pl
 	x = -1;
 	while (++x < playerCount)
 		out->put(players->at(x)->name);
+	return (players);
 }
 
 void	GameManager::Play()

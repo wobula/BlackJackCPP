@@ -8,7 +8,7 @@
 #include "IDeck.h"
 #include "Deck.h"
 #include "Move.h"
-//#include "Hand.h"
+#include "Hand.h"
 #include "Ihand.h"
 #include <string>
 

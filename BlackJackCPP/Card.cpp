@@ -27,6 +27,8 @@ Card::Card(int value, std::string face, std::string suit, bool faceDown)
 
 Card::~Card()
 {
+	delete this->name;
+	delete this->suit;
 }
 
 void	Card::PrintCard(IOutput *out)

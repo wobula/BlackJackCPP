@@ -14,6 +14,9 @@ Player::Player() : Player("player name")
 
 Player::~Player()
 {
+	delete this->name;
+	delete this->cards;
+	delete this->hand;
 }
 
 ICard*	Player::DrawCard(IDeck *cards)
@@ -41,6 +44,6 @@ IMove*	Player::GetMove(IInput *in, IOutput *out)
 	else if (action[0] == "h")
 		move->action = Hit;
 	else
-		move->action = Last;
+		move->action = Test;
 	return (move);
 }

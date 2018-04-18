@@ -16,7 +16,7 @@ enum playerMove
 {
 	Hit,
 	Stand,
-	Last
+	Test
 };
 
 #endif

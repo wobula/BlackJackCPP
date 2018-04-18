@@ -150,6 +150,7 @@
     <ClInclude Include="Card.h" />
     <ClInclude Include="Deck.h" />
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="Hand.h" />
     <ClInclude Include="ICard.h" />
     <ClInclude Include="IDeck.h" />
     <ClInclude Include="IGameManager.h" />
@@ -170,6 +171,7 @@
     <ClCompile Include="Card.cpp" />
     <ClCompile Include="Deck.cpp" />
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="Hand.cpp" />
     <ClCompile Include="ICard.cpp" />
     <ClCompile Include="IDeck.cpp" />
     <ClCompile Include="IGameManager.cpp" />
