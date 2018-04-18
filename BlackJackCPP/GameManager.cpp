@@ -27,6 +27,7 @@ void	GameManager::init(IInput *in, IOutput *out)
 {
 	this->playerCount = getPlayerCount(in, out);
 	this->players = makePlayers(this->In, this->Out, this->players, playerCount);
+	this->currentMoveIndex = 0;
 }
 
 int		GameManager::getPlayerCount(IInput *in, IOutput *out)
@@ -64,6 +65,16 @@ std::vector<IPlayer*>*	GameManager::makePlayers(IInput *in, IOutput *out, std::v
 void	GameManager::Play()
 {
 	std::cout << "Play function" << std::endl;
+	while (42)
+	{
+		//clear screen
+		//draw screen
+		//process player turn
+		//process dealer turn
+		//check win conditions
+		//increment to next player
+		std::cout << "Game loop";
+	}
 	this->end(NULL);
 }
 

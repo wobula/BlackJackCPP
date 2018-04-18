@@ -19,6 +19,7 @@ class GameManager : public IGameManager
 		void					Play();
 
 	private:
+		int						currentMoveIndex;
 		int						playerCount;
 		int						getPlayerCount(IInput *in, IOutput *out);
 		std::vector<IPlayer*>*	makePlayers(IInput *in, IOutput *out, std::vector<IPlayer*> *players, int playerCount);

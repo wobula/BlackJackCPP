@@ -14,6 +14,8 @@ class IGameManager
 	private:
 		virtual void	init(IInput *in, IOutput *out) = 0;
 		virtual void	end(IPlayer *winner) = 0;
+		
+		int				currentMoveIndex;
 };
 
 #endif
