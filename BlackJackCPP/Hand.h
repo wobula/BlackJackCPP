@@ -11,7 +11,7 @@ class Hand : public IHand
 		Hand();
 		~Hand();
 		void	AddCard(ICard *card);
-		int		GetHandValue(std::vector<ICard*> *card);
+		int		GetHandValue();
 		void	DisplayHand(IOutput *out);
 	private:
 		std::vector<ICard*> *cards;

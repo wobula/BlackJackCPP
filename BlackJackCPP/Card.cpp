@@ -33,8 +33,11 @@ Card::~Card()
 
 void	Card::PrintCard(IOutput *out)
 {
-	out->put(this->value);
+	out->put(this->name);
+	out->put(" : ");
 	out->put(this->suit);
+	out->put(" : ");
+	out->put(this->value);
 }
 void	Card::FlipCard(void)
 {

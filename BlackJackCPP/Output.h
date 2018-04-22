@@ -12,6 +12,10 @@ class Output : public IOutput
 	public:
 		Output();
 		~Output();
+		void putline(void);
+		void putline(std::string print);
+		void putline(std::string *print);
+		void putline(int num);
 		void put(std::string print);
 		void put(std::string *print);
 		void put(int num);

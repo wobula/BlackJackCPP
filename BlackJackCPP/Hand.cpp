@@ -13,13 +13,13 @@
 	delete this->cards;
 }
 
-int		Hand::GetHandValue(std::vector<ICard*> *card)
+int		Hand::GetHandValue()
 {
 	int x = -1;
 	int value = 0;
-	while (++x < (int)card->size())
+	while (++x < (int)this->cards->size())
 	{
-		value += card->at(x)->GetValue();
+		value += this->cards->at(x)->GetValue();
 	}
 	return (value);
 }
@@ -32,8 +32,11 @@ void	Hand::AddCard(ICard *card)
 void	Hand::DisplayHand(IOutput *out)
 {
 	int x = -1;
+	out->putline("\n-->Display Hand<--");
 	while (++x < (int)this->cards->size())
 	{
 		this->cards->at(x)->PrintCard(out);
+		out->put(" \n");
 	}
+	out->putline();
 }

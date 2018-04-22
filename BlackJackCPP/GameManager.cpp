@@ -40,7 +40,7 @@ int		GameManager::getPlayerCount(IInput *in, IOutput *out)
 		if (playerCount > 0 && playerCount < 5)
 			break;
 	}
-	out->put("Player count is " + std::to_string(playerCount));
+	out->putline("Player count is " + std::to_string(playerCount));
 	return (playerCount);
 }
 
@@ -57,7 +57,7 @@ std::vector<IPlayer*>*	GameManager::makePlayers(IInput *in, IOutput *out, int pl
 		tmp = new Player(new std::string(name), new Deck((new std::vector<ICard*>())), new Hand());
 		players->push_back(tmp);
 	}
-	out->put("Player count: " + std::to_string(playerCount));
+	out->putline("Player count: " + std::to_string(playerCount));
 	x = -1;
 	while (++x < playerCount)
 		out->put(players->at(x)->Name);
@@ -70,10 +70,10 @@ int						GameManager::GatherPlayerTurnChoice(IInput *in, IOutput *out)
 
 	while (true)
 	{
-		out->put("--Please select an option--");
-		out->put("1. Hit");
-		out->put("2. Stand");
-		out->put("3. Quit Game");
+		out->putline("--Please select an option--");
+		out->putline("1. Hit");
+		out->putline("2. Stand");
+		out->putline("3. Quit Game");
 		choice = in->Int();
 		if (choice > 0 && choice < 4)
 			break;
@@ -86,14 +86,17 @@ bool					GameManager::HandlePlayerTurn(IInput *in, IOutput *out, IPlayer *player
 	int playerChoice = -1;
 	while (true)
 	{
+		out->putline("Current hand value: " + player->MyHand->GetHandValue());
 		playerChoice = GatherPlayerTurnChoice(in, out);
-		out->put("Player choice: " + std::to_string(playerChoice));
+		out->putline("Player choice: " + std::to_string(playerChoice));
 		if (playerChoice == 1)
 			player->MyHand->AddCard(player->DrawCard(player->Cards));
 		else if (playerChoice == 2)
 			break;
 		else if (playerChoice == 3)
 			return (false);
+		if (player->MyHand->GetHandValue() > 21)
+			break;
 		player->MyHand->DisplayHand(out);
 	}
 	return (true);
@@ -101,15 +104,13 @@ bool					GameManager::HandlePlayerTurn(IInput *in, IOutput *out, IPlayer *player
 
 void					GameManager::Play()
 {
-	std::cout << "Play function" << std::endl;
 	this->currentMoveIndex = 0;
-	while (42)
+	while (this->currentMoveIndex < this->playerCount)
 	{
 		if (HandlePlayerTurn(this->In, this->Out, this->players->at(this->currentMoveIndex)) == false)
 			break;
-		//check win conditions
+		this->currentMoveIndex++;
 		//increment to next player
-		std::cout << "Game loop";
 	}
 	this->end(NULL);
 }

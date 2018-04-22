@@ -23,7 +23,7 @@ std::string Input::String(IOutput *out, std::string prompt)
 {
 	std::string tmp;
 
-	out->put(prompt);
+	out->putline(prompt);
 	std::getline(std::cin, tmp);
 	return (tmp);
 }
@@ -43,7 +43,7 @@ int			Input::Int(IOutput *out, std::string prompt)
 
 	while (42)
 	{
-		out->put(prompt);
+		out->putline(prompt);
 		std::getline(std::cin, tmp);
 		if (tmp.length() != 0 && tmp[0] > '0' && tmp[0] < '9')
 			break;
