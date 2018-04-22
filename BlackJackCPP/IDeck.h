@@ -9,9 +9,10 @@
 class IDeck
 {
 	public:
+		IDeck(std::vector<ICard*> *cards);
 		virtual ~IDeck() = 0;
 		//virtual ICard* DrawCard(void) = 0;
-		std::vector<ICard*> MyDeck;
+		std::vector<ICard*> *MyDeck;
 };
 
 #endif

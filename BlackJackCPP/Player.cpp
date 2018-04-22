@@ -20,8 +20,8 @@ ICard*	Player::DrawCard(IDeck *cards)
 {
 	ICard *tmp;
 
-	tmp = cards->MyDeck.back();
-	cards->MyDeck.pop_back();
+	tmp = cards->MyDeck->back();
+	cards->MyDeck->pop_back();
 	return (tmp);
 }
 

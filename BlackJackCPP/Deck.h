@@ -10,7 +10,7 @@
 class Deck : public IDeck
 {
 	public:
-		Deck();
+		Deck(std::vector<ICard*> *cards);
 		~Deck();
 
 		std::vector<ICard*> *MyDeck;

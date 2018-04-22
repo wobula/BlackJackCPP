@@ -3,27 +3,27 @@
 #include "Output.h"
 #include "Player.h"
 
-GameManager::GameManager()
+						GameManager::GameManager()
 {
 	this->Out = new Output();
 	this->In = new Input();
 	this->init(this->In, this->Out);
 }
 
-GameManager::~GameManager()
+						GameManager::~GameManager()
 {
 	delete this->Out;
 	delete this->In;
 	deletePlayers(this->players);
 }
 
-void	GameManager::deletePlayers(std::vector<IPlayer*> *players)
+void					GameManager::deletePlayers(std::vector<IPlayer*> *players)
 {
 	players->clear();
 	delete players;
 }
 
-void	GameManager::init(IInput *in, IOutput *out)
+void					GameManager::init(IInput *in, IOutput *out)
 {
 	this->playerCount = getPlayerCount(in, out);
 	this->players = makePlayers(this->In, this->Out, playerCount);
@@ -54,7 +54,7 @@ std::vector<IPlayer*>*	GameManager::makePlayers(IInput *in, IOutput *out, int pl
 	while (++x < playerCount)
 	{
 		name = in->String(out, "Please enter player name: ");
-		tmp = new Player(new std::string(name), new Deck(), new Hand());
+		tmp = new Player(new std::string(name), new Deck((new std::vector<ICard*>())), new Hand());
 		players->push_back(tmp);
 	}
 	out->put("Player count: " + std::to_string(playerCount));
@@ -64,7 +64,7 @@ std::vector<IPlayer*>*	GameManager::makePlayers(IInput *in, IOutput *out, int pl
 	return (players);
 }
 
-int		GameManager::GatherPlayerTurnChoice(IInput *in, IOutput *out)
+int						GameManager::GatherPlayerTurnChoice(IInput *in, IOutput *out)
 {
 	int choice;
 
@@ -81,7 +81,7 @@ int		GameManager::GatherPlayerTurnChoice(IInput *in, IOutput *out)
 	return (choice);
 }
 
-bool	GameManager::HandlePlayerTurn(IInput *in, IOutput *out, IPlayer *player)
+bool					GameManager::HandlePlayerTurn(IInput *in, IOutput *out, IPlayer *player)
 {
 	int playerChoice = -1;
 	while (true)
@@ -99,7 +99,7 @@ bool	GameManager::HandlePlayerTurn(IInput *in, IOutput *out, IPlayer *player)
 	return (true);
 }
 
-void	GameManager::Play()
+void					GameManager::Play()
 {
 	std::cout << "Play function" << std::endl;
 	this->currentMoveIndex = 0;
@@ -114,7 +114,7 @@ void	GameManager::Play()
 	this->end(NULL);
 }
 
-void	GameManager::end(IPlayer *winner)
+void				GameManager::end(IPlayer *winner)
 {
 	std::cout << "End game" << std::endl;
 }
