@@ -17,12 +17,14 @@ class GameManager : public IGameManager
 								GameManager();
 								~GameManager();
 		void					Play();
+		int						GatherPlayerTurnChoice(IInput *in, IOutput *out);
+		bool					HandlePlayerTurn(IInput *in, IOutput *out, IPlayer *player);
 
 	private:
 		int						currentMoveIndex;
 		int						playerCount;
 		int						getPlayerCount(IInput *in, IOutput *out);
-		std::vector<IPlayer*>*	makePlayers(IInput *in, IOutput *out, std::vector<IPlayer*> *players, int playerCount);
+		std::vector<IPlayer*>*	makePlayers(IInput *in, IOutput *out, int playerCount);
 		void					deletePlayers(std::vector<IPlayer*> *players);
 		void					init(IInput *in, IOutput *out);
 		void					end(IPlayer *winner);

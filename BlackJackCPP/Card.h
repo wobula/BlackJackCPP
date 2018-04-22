@@ -15,6 +15,7 @@ class Card : public ICard
 				~Card();
 		void	PrintCard(IOutput *out);
 		void	FlipCard();
+		int		GetValue();
 
 	//private:
 		int				value;

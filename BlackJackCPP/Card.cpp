@@ -51,3 +51,8 @@ std::string* Card::card_int_to_string(int value)
 		return (NULL);
 	return (new std::string(enumtext[value]));
 }
+
+int			Card::GetValue()
+{
+	return (this->value);
+}

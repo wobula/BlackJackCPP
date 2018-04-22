@@ -1,22 +1,19 @@
 #include "stdafx.h"
 #include "Player.h"
 
-Player::Player(std::string name)
+Player::Player(std::string *name, IDeck *deck, IHand *card) :
+	IPlayer(name, deck, card)
 {
-	this->name = new std::string(name);
-	this->cards = new Deck();
-	this->hand = new Hand();
-}
-
-Player::Player() : Player("player name")
-{
+	this->Name = name;
+	this->Cards = deck;
+	this->MyHand = card;
 }
 
 Player::~Player()
 {
-	delete this->name;
-	delete this->cards;
-	delete this->hand;
+	delete this->Name;
+	delete this->Cards;
+	delete this->MyHand;
 }
 
 ICard*	Player::DrawCard(IDeck *cards)

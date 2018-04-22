@@ -16,16 +16,13 @@ class Player : public IPlayer
 {
 	public:
 		std::string *Name;
+		IDeck		*Cards;
+		IHand		*MyHand;
 
-					Player(std::string name);
-					Player();
+					Player(std::string *name, IDeck *deck, IHand *card);
 					~Player();
 		ICard*		DrawCard(IDeck *cards);
 		IMove*		GetMove(IInput *in, IOutput *out);
-
-	private:
-		   IDeck		*cards;
-		   IHand		*hand;
 };
 
 #endif

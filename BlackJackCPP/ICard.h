@@ -11,6 +11,7 @@ class ICard
 		virtual			~ICard() = 0;
 		virtual void	PrintCard(IOutput *out) = 0;
 		virtual void	FlipCard() = 0;
+		virtual int		GetValue() = 0;
 };
 
 #endif
