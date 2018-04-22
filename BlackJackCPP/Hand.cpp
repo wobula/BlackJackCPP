@@ -2,18 +2,18 @@
 #include "Hand.h"
 
 
-Hand::Hand()
+		Hand::Hand()
 {
 	this->cards = new std::vector<ICard*>();
 }
 
-Hand::~Hand()
+		Hand::~Hand()
 {
 	this->cards->clear();
 	delete this->cards;
 }
 
-int		GetHandValue(std::vector<ICard*> *card)
+int		Hand::GetHandValue(std::vector<ICard*> *card)
 {
 	int x = -1;
 	int value = 0;
