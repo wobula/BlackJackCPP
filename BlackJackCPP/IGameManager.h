@@ -6,12 +6,14 @@
 #include "IPlayer.h"
 #include "IInput.h"
 #include "IOutput.h"
+#include "IRender.h"
 #include <vector>
 
 class IGameManager
 {
 	public:
 		std::vector<IPlayer*>	*players;
+		IRender					*Draw;
 
 		virtual					~IGameManager() = 0;
 		virtual void			Play() = 0;

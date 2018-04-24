@@ -1,12 +1,12 @@
 #include "stdafx.h"
 #include "GameManager.h"
-#include "Output.h"
-#include "Player.h"
+#include "Render.h"
 
 						GameManager::GameManager()
 {
 	this->Out = new Output();
 	this->In = new Input();
+	this->Draw = new Render(this->Out, this->In);
 	this->init(this->In, this->Out);
 }
 
@@ -36,7 +36,8 @@ int		GameManager::getPlayerCount(IInput *in, IOutput *out)
 
 	while (42)
 	{
-		playerCount = in->Int(out, "Please enter the number of players: ");
+		this->Draw->InitPlayerNumber();
+		playerCount = in->Int();
 		if (playerCount > 0 && playerCount < 5)
 			break;
 	}

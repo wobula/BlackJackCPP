@@ -3,9 +3,14 @@
 #ifndef  GAMEMANAGER_H
 #define	 GAMEMANAGER_H
 
+#include "Render.h"
 #include "IOutput.h"
 #include "IInput.h"
 #include "IGameManager.h"
+#include "IRender.h"
+#include "Output.h"
+#include "Player.h"
+
 
 class GameManager : public IGameManager
 {
@@ -13,6 +18,7 @@ class GameManager : public IGameManager
 		IOutput					*Out;
 		IInput					*In;
 		std::vector<IPlayer*>	*players;
+		IRender					*Draw;
 
 								GameManager();
 								~GameManager();

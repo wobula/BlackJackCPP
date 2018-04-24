@@ -2,8 +2,7 @@
 #include "Deck.h"
 #include <string>
 
-Deck::Deck(std::vector<ICard*> *cards) : IDeck
-	(cards)
+Deck::Deck(std::vector<ICard*> *cards) : IDeck(cards)
 {
 	std::cout << "Making your deck of cards!" << std::endl;
 	this->MyDeck = cards;
