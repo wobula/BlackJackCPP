@@ -26,7 +26,7 @@ void					GameManager::deletePlayers(std::vector<IPlayer*> *players)
 void					GameManager::init(IInput *in, IOutput *out)
 {
 	this->playerCount = getPlayerCount(in, out);
-	this->players = makePlayers(this->In, this->Out, playerCount);
+	this->players = makePlayers(this->In, this->Out, this->playerCount);
 	this->currentMoveIndex = 0;
 }
 
@@ -87,7 +87,7 @@ bool					GameManager::HandlePlayerTurn(IInput *in, IOutput *out, IPlayer *player
 	int playerChoice = -1;
 	while (true)
 	{
-		out->putline("Current hand value: " + player->MyHand->GetHandValue());
+		out->putline("Current hand value: " + std::to_string(player->MyHand->GetHandValue()));
 		playerChoice = GatherPlayerTurnChoice(in, out);
 		out->putline("Player choice: " + std::to_string(playerChoice));
 		if (playerChoice == 1)

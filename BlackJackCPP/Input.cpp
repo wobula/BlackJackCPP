@@ -30,9 +30,11 @@ std::string Input::String(IOutput *out, std::string prompt)
 
 int			Input::Int(void)
 {
-	int value;
+	int value = -1;
+	std::string tmp;
 
-	std::cin >> value;
+	std::getline(std::cin, tmp);
+	value = atoi(tmp.c_str());
 	return (value);
 }
 
@@ -49,5 +51,7 @@ int			Input::Int(IOutput *out, std::string prompt)
 			break;
 	}
 	value = tmp[0] - 48;
+	std::cin.clear();
+	std::cin.sync();
 	return (value);
 }
